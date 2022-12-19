@@ -1,0 +1,44 @@
+Delete 
+https://rahulshettyacademy.com/Library/DeleteBook.php
+get 
+https://rahulshettyacademy.com/Library/GetBook.php
+post 
+https://rahulshettyacademy.com/Library/Addbook.php 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Delete 
+https://rahulshettyacademy.com/Library/DeleteBook.php
+{
+"ID" : "9819991819862001"
+}
+get 	
+https://rahulshettyacademy.com/Library/GetBook.php?ID=9819991819862001
+post 
+https://rahulshettyacademy.com/Library/Addbook.php 
+{
+"name":"Qa private Zoom",
+"isbn":"981799183",
+"aisle":"9882100",
+"author":"Sumaya - Qa- Autoamtion"
+}
+java script object notation 
+international standardisation book number 
+add (after) 
+_____________________________________________________________________________________________
+pm.test("check the staus",function(){
+    pm.response.to.have.status(200)
+})
+const myResponse = pm.response.json()
+pm.test("check if we have the word ID in our response",function(){
+pm.expect(myResponse).to.have.property("ID")
+})
+pm.test("return the number of the book id if is existed",function(){
+    pm.expect(myResponse.ID).eql("9317991849882119")
+})
+pm.test("return the msg of the book if it is existed",function(){
+    pm.expect(myResponse.Msg).eql("The Book with the entered Isbn and Aisle already Exists!!")
+})
+_____________________________________________________________________________________________
+add pre 
+const cityname = pm.globals.get('city-Code')
+const randomValue =  pm.variables.replaceIn('{{$randomInt}}')
+pm.collectionVariables.set('isbn',cityname+randomValue)
